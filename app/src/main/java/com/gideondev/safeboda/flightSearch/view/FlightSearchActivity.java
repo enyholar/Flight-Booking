@@ -60,7 +60,6 @@ public class FlightSearchActivity extends BaseActionbarActivity implements Fligh
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("FlightSearch");
         toolbar.setTitleTextColor(Color.WHITE);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -94,7 +93,7 @@ public class FlightSearchActivity extends BaseActionbarActivity implements Fligh
     }
 
     @Override
-    public void showOriginDestinationSpinnerData(List<AirportItem> cityItemList) {
+    public void showOriginDestinationSpinnerData(final List<AirportItem> cityItemList) {
         ArrayAdapter<AirportItem> dataAdapter = new ArrayAdapter<AirportItem>(this,
                 android.R.layout.simple_spinner_item, cityItemList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -108,7 +107,7 @@ public class FlightSearchActivity extends BaseActionbarActivity implements Fligh
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                presenter.getOriginCityModel(cityItemList.get(0));
             }
         });
         dataAdapter.notifyDataSetChanged();
@@ -127,7 +126,7 @@ public class FlightSearchActivity extends BaseActionbarActivity implements Fligh
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                presenter.getDestinationCityModel(cityItemList.get(0));
             }
         });
         destinationAdapter.notifyDataSetChanged();

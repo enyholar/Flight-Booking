@@ -5,6 +5,10 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="" />
     <option name="SERVER_URL" value="http://buildserver" />
@@ -53,22 +57,22 @@
       <file leaf-file-name="FlightRouteDetailsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/view/FlightRouteDetailsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="1394">
               <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapLocationTrackPresenterImplement.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MapLocationTrackPresenterImplement.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
-              <caret line="349" column="0" lean-forward="false" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
+            <state relative-caret-position="1921">
+              <caret line="274" column="39" lean-forward="false" selection-start-line="274" selection-start-column="39" selection-end-line="274" selection-end-column="39" />
               <folding>
-                <element signature="e#9507#9522#0" expanded="true" />
-                <element signature="e#10822#10837#0" expanded="true" />
-                <element signature="e#11650#11667#0" expanded="true" />
+                <element signature="e#5520#5535#0" expanded="true" />
+                <element signature="e#6834#6849#0" expanded="true" />
+                <element signature="e#7662#7679#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlightSearchImplementation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FlightSearchImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/presenter/presenter_implementation/FlightSearchImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-374">
-              <caret line="136" column="64" lean-forward="false" selection-start-line="136" selection-start-column="64" selection-end-line="136" selection-end-column="64" />
+            <state relative-caret-position="256">
+              <caret line="107" column="38" lean-forward="false" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -125,8 +129,8 @@
       <file leaf-file-name="FlightSearchActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/view/FlightSearchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2158">
-              <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -2198,10 +2202,11 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/view/FlightRouteDetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/Utility/data/DataParser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_attached_flightdetails.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/availableFlights/View/AirLIneListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/presenter/presenter_implementation/FlightSearchImplementation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/view/FlightSearchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java" />
       </list>
     </option>
   </component>
@@ -2708,7 +2713,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Material Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7160714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2749,109 +2754,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>375</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>346</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>349</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>224</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>222</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>304</line>
+          <line>233</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>303</line>
+          <line>232</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>292</line>
+          <line>221</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>294</line>
+          <line>223</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>298</line>
+          <line>227</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>366</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>370</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>396</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>269</line>
+          <line>198</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>100</line>
+          <line>99</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>103</line>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>98</line>
+          <line>97</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
@@ -2863,36 +2814,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>276</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>278</line>
+          <line>207</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>233</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>236</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java</url>
-          <line>273</line>
+          <line>202</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2910,9 +2849,9 @@
         <state relative-caret-position="4930">
           <caret line="290" column="0" lean-forward="false" selection-start-line="289" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding>
-            <element signature="e#9507#9522#0" expanded="true" />
-            <element signature="e#10822#10837#0" expanded="true" />
-            <element signature="e#11650#11667#0" expanded="true" />
+            <element signature="e#5520#5535#0" expanded="true" />
+            <element signature="e#6834#6849#0" expanded="true" />
+            <element signature="e#7662#7679#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2955,26 +2894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/view/FlightRouteDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="349" column="0" lean-forward="false" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
-          <folding>
-            <element signature="e#9507#9522#0" expanded="true" />
-            <element signature="e#10822#10837#0" expanded="true" />
-            <element signature="e#11650#11667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/retrofit/webservice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -3005,14 +2924,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/view/FlightSearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2158">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/availableFlights/View/AirLIneListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -3031,9 +2942,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/presenter/presenter_implementation/FlightSearchImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="136" column="64" lean-forward="false" selection-start-line="136" selection-start-column="64" selection-end-line="136" selection-end-column="64" />
+        <state relative-caret-position="256">
+          <caret line="107" column="38" lean-forward="false" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/flightSearch/view/FlightSearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/view/FlightRouteDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gideondev/safeboda/mapTrack/presenter/presenterImplementation/MapLocationTrackPresenterImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="274" column="39" lean-forward="false" selection-start-line="274" selection-start-column="39" selection-end-line="274" selection-end-column="39" />
+          <folding>
+            <element signature="e#5520#5535#0" expanded="true" />
+            <element signature="e#6834#6849#0" expanded="true" />
+            <element signature="e#7662#7679#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

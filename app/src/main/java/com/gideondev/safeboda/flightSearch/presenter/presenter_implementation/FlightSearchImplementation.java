@@ -104,64 +104,67 @@ public class FlightSearchImplementation implements FlightSearchPresenter {
 
     @Override
     public void searchForFlight() {
-        progressBarHandler.show();
-        String destinationIATA = destinationAirport.getAirportCode();
-        String originIATA = originAirport.getAirportCode();
+        if (destinationAirport != null && originAirport != null) {
+            progressBarHandler.show();
+            String destinationIATA = destinationAirport.getAirportCode();
+            String originIATA = originAirport.getAirportCode();
 
-        webservice apiServices =
-                FlightLocationClient.getClient().create(webservice.class);
-        Call<ScheduleResponse> jsonFlight = apiServices.getAllFlight("Bearer "+ preferenUtil.getAccessToken(),
-                "application/json", originIATA, destinationIATA, departureDate, false);
-        jsonFlight.enqueue(new Callback<ScheduleResponse>() {
-            @Override
-            public void onResponse(Call<ScheduleResponse> call, Response<ScheduleResponse> response) {
-                Toast.makeText(mView.getContext(), response.message(), Toast.LENGTH_LONG).show();
-                if (response.body() != null && response.body().getScheduleResource() != null) {
-                    if (destinationAirport != null && originAirport != null) {
-                        preferenUtil.saveArrivalItem(destinationAirport);
-                        preferenUtil.saveDepartureItem(originAirport);
+            webservice apiServices =
+                    FlightLocationClient.getClient().create(webservice.class);
+            Call<ScheduleResponse> jsonFlight = apiServices.getAllFlight("Bearer " + preferenUtil.getAccessToken(),
+                    "application/json", originIATA, destinationIATA, departureDate, false);
+            jsonFlight.enqueue(new Callback<ScheduleResponse>() {
+                @Override
+                public void onResponse(Call<ScheduleResponse> call, Response<ScheduleResponse> response) {
+                    Toast.makeText(mView.getContext(), response.message(), Toast.LENGTH_LONG).show();
+                    if (response.body() != null && response.body().getScheduleResource() != null) {
+                        if (destinationAirport != null && originAirport != null) {
+                            preferenUtil.saveArrivalItem(destinationAirport);
+                            preferenUtil.saveDepartureItem(originAirport);
+                        }
+                        Intent intent = new Intent(mView.getActivity(), AirLIneListActivity.class);
+                        Gson gson = new Gson();
+                        String json = gson.toJson(response.body().getScheduleResource());
+                        intent.putExtra(KEY_SCHEDULE_LIST, json);
+                        mView.getActivity().startActivity(intent);
+
                     }
-                    Intent intent = new Intent(mView.getActivity(), AirLIneListActivity.class);
-                    Gson gson = new Gson();
-                    String json = gson.toJson(response.body().getScheduleResource());
-                    intent.putExtra(KEY_SCHEDULE_LIST, json);
-                    mView.getActivity().startActivity(intent);
-
-                }
-                progressBarHandler.hide();
-            }
-
-            @Override
-            public void onFailure(Call<ScheduleResponse> call, Throwable t) {
-                Log.i("error", t.toString());
-                Toast.makeText(mView.getContext(),  t.toString(), Toast.LENGTH_LONG).show();
-                progressBarHandler.hide();
-            }
-        });
-    }
-
-    @Override
-    public void getTokenFromService() {
-        webservice apiServic =
-                FlightLocationClient.getClient().create(webservice.class);
-        Call<Token> jsonToken = apiServic.requestToken("pbrqs6yz9pkx76pgane9p4f4", "Uf879768fY", "client_credentials");
-        jsonToken.enqueue(new Callback<Token>() {
-            @Override
-            public void onResponse(Call<Token> call, Response<Token> response) {
-                if (response.body() != null && !response.body().getAccessToken().isEmpty()) {
-                    preferenUtil.saveAccessToken(response.body().getAccessToken());
-                    initData();
-                    Log.i("solved", response.body().toString());
+                    progressBarHandler.hide();
                 }
 
-            }
-
-            @Override
-            public void onFailure(Call<Token> call, Throwable t) {
-                Log.i("error", t.toString());
-            }
-        });
+                @Override
+                public void onFailure(Call<ScheduleResponse> call, Throwable t) {
+                    Log.i("error", t.toString());
+                    Toast.makeText(mView.getContext(), t.toString(), Toast.LENGTH_LONG).show();
+                    progressBarHandler.hide();
+                }
+            });
+        }
     }
+
+        @Override
+        public void getTokenFromService() {
+            webservice apiServic =
+                    FlightLocationClient.getClient().create(webservice.class);
+            Call<Token> jsonToken = apiServic.requestToken("pbrqs6yz9pkx76pgane9p4f4", "Uf879768fY", "client_credentials");
+            jsonToken.enqueue(new Callback<Token>() {
+                @Override
+                public void onResponse(Call<Token> call, Response<Token> response) {
+                    if (response.body() != null && !response.body().getAccessToken().isEmpty()) {
+                        preferenUtil.saveAccessToken(response.body().getAccessToken());
+                        initData();
+                        Log.i("solved", response.body().toString());
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<Token> call, Throwable t) {
+                    Log.i("error", t.toString());
+                }
+            });
+        }
+
 
     @Override
     public void resume() {
