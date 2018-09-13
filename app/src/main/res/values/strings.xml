@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Safe Boda</string>
+
+
+
+    <string name="google_maps_key">AIzaSyCwwHCIzIIi0rJ3TF9lxIBL8UUpSWLKNe0
+</string>
+
+
+    <string name="prompt_flyingfrom">Flying from</string>
+    <string name="prompt_flyingto">Flying to</string>
+    <string name="prompt_departure_date">Departure date</string>
+    <string name="prompt_return_date">Return date</string>
+    <string name="prompt_traveller">Select Traveller</string>
+    <string name="prompt_class">Select class</string>
+    <string name="prompt_first_name">First Name</string>
+    <string name="prompt_last_name">Last Name</string>
+    <string name="alert_dialog_two_buttons_title">My Title</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="sort">
+        <item>Fare</item>
+        <item>Travel time</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>
