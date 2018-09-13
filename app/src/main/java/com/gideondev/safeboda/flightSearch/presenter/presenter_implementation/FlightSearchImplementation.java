@@ -52,7 +52,6 @@ public class FlightSearchImplementation implements FlightSearchPresenter {
                             getTokenFromService();
                         } else if (response.body() != null) {
                             AirportResource airportResource = response.body().getAirportResource();
-                            //  String aa = response.body().getCityResource().getCities().getCity().get(0).getAirports().getAirportCode();
                             mView.showOriginDestinationSpinnerData(airportResource.getAirports().getAirport());
                         }
 
@@ -78,30 +77,7 @@ public class FlightSearchImplementation implements FlightSearchPresenter {
         progressBarHandler = new ProgressBarHandler(mView.getContext());
     }
 
-//    @Override
-//    public void getAirPortPerCity(String city){
-//        webservice apiService =
-//                FlightLocationClient.getClient().create(webservice.class);
-//
-//        Call<JsonObject> jsonFlight= apiService.getAllAirportPerCity("Bearer wxe99dgvknkjv78qzpmrmvd8",
-//                "application/json",city);
-//        jsonFlight.enqueue(new Callback<JsonObject>() {
-//            @Override
-//            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-//                Toast.makeText(mView.getContext(),response.message(),Toast.LENGTH_LONG).show();
-////                if (response != null && response.body() != null){
-////                    CityResource cityResource = response.body().getCityResource();
-////                    mView.showOriginDestinationSpinnerData(cityResource.getCities().getCity());
-////                }
-//                Log.i("solved", response.body().toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<JsonObject> call, Throwable t) {
-//                Log.i("error", t.toString());
-//            }
-//        });
-//    }
+
 
     @Override
     public AirportItem getOriginCityModel(AirportItem originCities) {

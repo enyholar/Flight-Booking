@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import com.gideondev.safeboda.Utility.Constant;
 import com.gideondev.safeboda.availableFlights.presenter.presenter_view.AirlineListPresenter;
 import com.gideondev.safeboda.availableFlights.presenter.presenter_view.AirlineListView;
-import com.gideondev.safeboda.mapTrack.CarLocationDetailsActivity;
+import com.gideondev.safeboda.mapTrack.view.FlightRouteDetailsActivity;
 import com.gideondev.safeboda.model.schedules.ScheduleItem;
 import com.gideondev.safeboda.model.schedules.ScheduleResource;
 import com.google.gson.Gson;
@@ -34,7 +34,7 @@ public class AirLineListImplementation implements AirlineListPresenter {
 
     @Override
     public void openRouteScreen() {
-        Intent intent = new Intent(mView.getContext(), CarLocationDetailsActivity.class);
+        Intent intent = new Intent(mView.getContext(), FlightRouteDetailsActivity.class);
         mView.getActivity().startActivity(intent);
     }
 

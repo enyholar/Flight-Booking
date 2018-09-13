@@ -1,10 +1,9 @@
-package com.gideondev.safeboda.mapTrack;
+package com.gideondev.safeboda.mapTrack.view;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -21,14 +20,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Marker;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
-public class CarLocationDetailsActivity extends FragmentActivity implements OnMapReadyCallback, MapLocationTrackView {
+public class FlightRouteDetailsActivity extends FragmentActivity implements OnMapReadyCallback, MapLocationTrackView {
     private SupportMapFragment mapFragment;
-  //  private List<PlacemarksItem> placemarksItemList = new ArrayList<>();
     @Inject
     MapLocationTrackPresenter presenter;
     private Marker mUserMarker;
@@ -53,7 +48,7 @@ public class CarLocationDetailsActivity extends FragmentActivity implements OnMa
                 .inject(this);
         presenter.setView(this);
         presenter.getData();
- //       placemarksItemList.addAll(presenter.getAllCarList());
+
     }
 
     private void initPermission(){
@@ -64,7 +59,7 @@ public class CarLocationDetailsActivity extends FragmentActivity implements OnMa
 
 
     private void requestPermission(){
-        ActivityCompat.requestPermissions(CarLocationDetailsActivity.this,
+        ActivityCompat.requestPermissions(FlightRouteDetailsActivity.this,
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 1);
     }
@@ -83,13 +78,11 @@ public class CarLocationDetailsActivity extends FragmentActivity implements OnMa
                 } else {
 
                     // permission denied.
-                    Toast.makeText(CarLocationDetailsActivity.this, "Permission denied", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlightRouteDetailsActivity.this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
 
-            // other 'case' lines to check for other
-            // permissions this app might request
         }
     }
 
@@ -108,8 +101,6 @@ public class CarLocationDetailsActivity extends FragmentActivity implements OnMa
     public void onMapReady(final GoogleMap googleMap) {
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         presenter.setMap(googleMap);
-
-
     }
 
     @Override

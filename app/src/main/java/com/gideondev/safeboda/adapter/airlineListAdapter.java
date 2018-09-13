@@ -2,7 +2,6 @@ package com.gideondev.safeboda.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,6 @@ import android.widget.TextView;
 
 import com.gideondev.safeboda.R;
 import com.gideondev.safeboda.availableFlights.presenter.presenter_view.AirlineListPresenter;
-import com.gideondev.safeboda.mapTrack.CarLocationDetailsActivity;
-import com.gideondev.safeboda.mapTrack.presenter.presenterView.MapLocationTrackPresenter;
 import com.gideondev.safeboda.model.schedules.FlightItem;
 import com.gideondev.safeboda.model.schedules.ScheduleItem;
 

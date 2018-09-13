@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_flight_takeoff_black_24dp"
-        android:background="@color/colorLightGreen"/>
+        android:tint="@color/colorLightGreen"
+       />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/airline_departure_earliest"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:src="@drawable/ic_flight_land_black_24dp"
-        android:background="@color/colorBlue"/>
+       android:tint="@color/colorBlue"/>
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/airline_return_time"

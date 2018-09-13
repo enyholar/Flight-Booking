@@ -2,12 +2,14 @@ package com.gideondev.safeboda.availableFlights.View;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.gideondev.safeboda.R;
@@ -25,14 +27,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class AirLIneListActivity extends BaseActionbarActivity implements AirlineListView{
+public class AirLIneListActivity extends BaseActionbarActivity implements AirlineListView,View.OnClickListener{
     @Inject
     AirlineListPresenter presenter;
     private RecyclerView recyclerView;
     private airlineListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private Toolbar toolbar;
-//    private List<Airline> allAirlineList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class AirLIneListActivity extends BaseActionbarActivity implements Airlin
         recyclerView = findViewById(R.id.recyclerview);
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setHasFixedSize(true);
     }
 
     private void iniActionbar() {
@@ -94,6 +95,26 @@ public class AirLIneListActivity extends BaseActionbarActivity implements Airlin
             recyclerView.setAdapter(mAdapter);
     }
 
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 
     @Override
     public void showLineLoading() {

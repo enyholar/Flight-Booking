@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.gideondev.safeboda.Utility.PreferenUtil;
+import com.gideondev.safeboda.Utility.ProgressBarHandler;
+import com.gideondev.safeboda.Utility.data.DataParser;
 import com.gideondev.safeboda.mapTrack.presenter.presenterView.MapLocationTrackPresenter;
 import com.gideondev.safeboda.mapTrack.presenter.presenterView.MapLocationTrackView;
 import com.gideondev.safeboda.model.AirportItem;
@@ -40,6 +42,7 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
     public static final String Direction_API = "https://maps.googleapis.com/maps/api/directions/json?origin=";
     public static final String API_KEY = "AIzaSyCwwHCIzIIi0rJ3TF9lxIBL8UUpSWLKNe0";
     GoogleMap mMap;
+    private ProgressBarHandler progressBarHandler;
 
 
     @Override
@@ -66,6 +69,7 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
     @Override
     public void getData() {
         preferenUtil = PreferenUtil.getInstant(mView.getContext());
+        progressBarHandler = new ProgressBarHandler(mView.getContext());
         originAirportItem = preferenUtil.getDepartureItem();
         arrivalAirportItem = preferenUtil.getArrivalItem();
     }
@@ -87,7 +91,7 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
-
+                progressBarHandler.show();
                 LatLng origin = list.get(0);
                 LatLng dest = list.get(1);
 
@@ -98,11 +102,10 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
 
                 // Start downloading json data from Google Directions API
                 FetchUrl.execute(url);
-                //move map camera
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(origin));
-                mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+//                //move map camera
+//                mMap.moveCamera(CameraUpdateFactory.newLatLng(origin));
+//                mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
-   //             drawPolyLineOnMap(list,mMap);
                 LatLng barcelona = new LatLng(originAirportItem.getPosition().getCoordinate().getLatitude(), originAirportItem.getPosition().getCoordinate().getLongitude());
                 mMap.addMarker(new MarkerOptions().position(barcelona).title("Departure"));
 
@@ -200,7 +203,6 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
 
         final LatLngBounds bounds = builder.build();
 
-        //BOUND_PADDING is an int to specify padding of bound.. try 100.
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, 6);
         googleMap.animateCamera(cu);
     }
@@ -341,101 +343,100 @@ public class MapLocationTrackPresenterImplement implements MapLocationTrackPrese
 
             // Drawing polyline in the Google Map for the i-th route
             if (lineOptions != null) {
+                progressBarHandler.hide();
                 mMap.addPolyline(lineOptions);
             } else {
+                progressBarHandler.hide();
                 Log.d("onPostExecute", "without Polylines drawn");
             }
         }
     }
 
 
-    class DataParser {
+//    class DataParser {
+//
+//        List<List<HashMap<String,String>>> parse(JSONObject jObject){
+//
+//            List<List<HashMap<String, String>>> routes = new ArrayList<>() ;
+//            JSONArray jRoutes;
+//            JSONArray jLegs;
+//            JSONArray jSteps;
+//
+//            try {
+//
+//                jRoutes = jObject.getJSONArray("routes");
+//
+//                /** Traversing all routes */
+//                for(int i=0;i<jRoutes.length();i++){
+//                    jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
+//                    List path = new ArrayList<>();
+//
+//                    /** Traversing all legs */
+//                    for(int j=0;j<jLegs.length();j++){
+//                        jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+//
+//                        /** Traversing all steps */
+//                        for(int k=0;k<jSteps.length();k++){
+//                            String polyline = "";
+//                            polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+//                            List<LatLng> list = decodePoly(polyline);
+//
+//                            /** Traversing all points */
+//                            for(int l=0;l<list.size();l++){
+//                                HashMap<String, String> hm = new HashMap<>();
+//                                hm.put("lat", Double.toString((list.get(l)).latitude) );
+//                                hm.put("lng", Double.toString((list.get(l)).longitude) );
+//                                path.add(hm);
+//                            }
+//                        }
+//                        routes.add(path);
+//                    }
+//                }
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }catch (Exception e){
+//            }
+//
+//
+//            return routes;
+//        }
 
-        List<List<HashMap<String,String>>> parse(JSONObject jObject){
 
-            List<List<HashMap<String, String>>> routes = new ArrayList<>() ;
-            JSONArray jRoutes;
-            JSONArray jLegs;
-            JSONArray jSteps;
-
-            try {
-
-                jRoutes = jObject.getJSONArray("routes");
-
-                /** Traversing all routes */
-                for(int i=0;i<jRoutes.length();i++){
-                    jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
-                    List path = new ArrayList<>();
-
-                    /** Traversing all legs */
-                    for(int j=0;j<jLegs.length();j++){
-                        jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
-
-                        /** Traversing all steps */
-                        for(int k=0;k<jSteps.length();k++){
-                            String polyline = "";
-                            polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
-                            List<LatLng> list = decodePoly(polyline);
-
-                            /** Traversing all points */
-                            for(int l=0;l<list.size();l++){
-                                HashMap<String, String> hm = new HashMap<>();
-                                hm.put("lat", Double.toString((list.get(l)).latitude) );
-                                hm.put("lng", Double.toString((list.get(l)).longitude) );
-                                path.add(hm);
-                            }
-                        }
-                        routes.add(path);
-                    }
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }catch (Exception e){
-            }
-
-
-            return routes;
-        }
-
-
-        /**
-         * Method to decode polyline points
-         * */
-        private List<LatLng> decodePoly(String encoded) {
-
-            List<LatLng> poly = new ArrayList<>();
-            int index = 0, len = encoded.length();
-            int lat = 0, lng = 0;
-
-            while (index < len) {
-                int b, shift = 0, result = 0;
-                do {
-                    b = encoded.charAt(index++) - 63;
-                    result |= (b & 0x1f) << shift;
-                    shift += 5;
-                } while (b >= 0x20);
-                int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-                lat += dlat;
-
-                shift = 0;
-                result = 0;
-                do {
-                    b = encoded.charAt(index++) - 63;
-                    result |= (b & 0x1f) << shift;
-                    shift += 5;
-                } while (b >= 0x20);
-                int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-                lng += dlng;
-
-                LatLng p = new LatLng((((double) lat / 1E5)),
-                        (((double) lng / 1E5)));
-                poly.add(p);
-            }
-
-            return poly;
-        }
-    }
+//        private List<LatLng> decodePoly(String encoded) {
+//
+//            List<LatLng> poly = new ArrayList<>();
+//            int index = 0, len = encoded.length();
+//            int lat = 0, lng = 0;
+//
+//            while (index < len) {
+//                int b, shift = 0, result = 0;
+//                do {
+//                    b = encoded.charAt(index++) - 63;
+//                    result |= (b & 0x1f) << shift;
+//                    shift += 5;
+//                } while (b >= 0x20);
+//                int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+//                lat += dlat;
+//
+//                shift = 0;
+//                result = 0;
+//                do {
+//                    b = encoded.charAt(index++) - 63;
+//                    result |= (b & 0x1f) << shift;
+//                    shift += 5;
+//                } while (b >= 0x20);
+//                int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+//                lng += dlng;
+//
+//                LatLng p = new LatLng((((double) lat / 1E5)),
+//                        (((double) lng / 1E5)));
+//                poly.add(p);
+//            }
+//
+//            return poly;
+//        }
+//    }
 
 
 
