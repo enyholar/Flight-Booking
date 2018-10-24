@@ -1,2 +1,2 @@
-Flight booking app that use Lufthansa Api
-Uses MVP architecture
+Flight booking app that use Lufthansa Api.
+The app is built with  MVP architecture
